@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+    <entity name="Student" representedClassName="Student" syncable="YES" codeGenerationType="class">
+        <attribute name="firstName" attributeType="String"/>
+        <attribute name="lastName" attributeType="String"/>
+        <relationship name="session" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="StudySession" inverseName="student" inverseEntity="StudySession"/>
+    </entity>
+    <entity name="StudySession" representedClassName="StudySession" syncable="YES" codeGenerationType="class">
+        <attribute name="beginDate" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="minutes" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="subject" attributeType="String"/>
+        <relationship name="student" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Student" inverseName="session" inverseEntity="Student"/>
+    </entity>
+    <elements>
+        <element name="Student" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="StudySession" positionX="126.36328125" positionY="-25.8125" width="128" height="103"/>
+    </elements>
 </model>
