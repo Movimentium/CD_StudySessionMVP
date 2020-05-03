@@ -9,23 +9,23 @@
 /* Begin PBXBuildFile section */
 		0C071480245F3C3A009AD04F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07147F245F3C3A009AD04F /* AppDelegate.swift */; };
 		0C071482245F3C3A009AD04F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C071481245F3C3A009AD04F /* SceneDelegate.swift */; };
-		0C071484245F3C3A009AD04F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C071483245F3C3A009AD04F /* ViewController.swift */; };
-		0C071487245F3C3A009AD04F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C071485245F3C3A009AD04F /* Main.storyboard */; };
-		0C07148A245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C071488245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodeld */; };
 		0C07148C245F3C3B009AD04F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0C07148B245F3C3B009AD04F /* Assets.xcassets */; };
-		0C07148F245F3C3B009AD04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C07148D245F3C3B009AD04F /* LaunchScreen.storyboard */; };
+		0C071497245F3CB3009AD04F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C071496245F3CB3009AD04F /* LaunchScreen.storyboard */; };
+		0C07149B245F3D26009AD04F /* StudySession.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0C07149A245F3D26009AD04F /* StudySession.storyboard */; };
+		0C07149D245F3DD1009AD04F /* StudentsListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C07149C245F3DD1009AD04F /* StudentsListVC.swift */; };
+		0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C07149E245F3E86009AD04F /* StudentsModel.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0C07147C245F3C3A009AD04F /* CD_StudySessionMVP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CD_StudySessionMVP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0C07147F245F3C3A009AD04F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0C071481245F3C3A009AD04F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0C071483245F3C3A009AD04F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		0C071486245F3C3A009AD04F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		0C071489245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CD_StudySessionMVP.xcdatamodel; sourceTree = "<group>"; };
 		0C07148B245F3C3B009AD04F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0C07148E245F3C3B009AD04F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0C071490245F3C3B009AD04F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0C071496245F3CB3009AD04F /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0C07149A245F3D26009AD04F /* StudySession.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StudySession.storyboard; sourceTree = "<group>"; };
+		0C07149C245F3DD1009AD04F /* StudentsListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListVC.swift; sourceTree = "<group>"; };
+		0C07149F245F3E86009AD04F /* StudentsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,14 +60,30 @@
 			children = (
 				0C07147F245F3C3A009AD04F /* AppDelegate.swift */,
 				0C071481245F3C3A009AD04F /* SceneDelegate.swift */,
-				0C071483245F3C3A009AD04F /* ViewController.swift */,
-				0C071485245F3C3A009AD04F /* Main.storyboard */,
+				0C071499245F3CD3009AD04F /* Model */,
+				0C071498245F3CC4009AD04F /* Views */,
 				0C07148B245F3C3B009AD04F /* Assets.xcassets */,
-				0C07148D245F3C3B009AD04F /* LaunchScreen.storyboard */,
 				0C071490245F3C3B009AD04F /* Info.plist */,
-				0C071488245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodeld */,
 			);
 			path = CD_StudySessionMVP;
+			sourceTree = "<group>";
+		};
+		0C071498245F3CC4009AD04F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0C071496245F3CB3009AD04F /* LaunchScreen.storyboard */,
+				0C07149A245F3D26009AD04F /* StudySession.storyboard */,
+				0C07149C245F3DD1009AD04F /* StudentsListVC.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0C071499245F3CD3009AD04F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0C07149E245F3E86009AD04F /* StudentsModel.xcdatamodeld */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -128,9 +144,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C07148F245F3C3B009AD04F /* LaunchScreen.storyboard in Resources */,
 				0C07148C245F3C3B009AD04F /* Assets.xcassets in Resources */,
-				0C071487245F3C3A009AD04F /* Main.storyboard in Resources */,
+				0C07149B245F3D26009AD04F /* StudySession.storyboard in Resources */,
+				0C071497245F3CB3009AD04F /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,33 +157,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C071484245F3C3A009AD04F /* ViewController.swift in Sources */,
-				0C07148A245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodeld in Sources */,
 				0C071480245F3C3A009AD04F /* AppDelegate.swift in Sources */,
+				0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */,
+				0C07149D245F3DD1009AD04F /* StudentsListVC.swift in Sources */,
 				0C071482245F3C3A009AD04F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		0C071485245F3C3A009AD04F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C071486245F3C3A009AD04F /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		0C07148D245F3C3B009AD04F /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0C07148E245F3C3B009AD04F /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0C071491245F3C3B009AD04F /* Debug */ = {
@@ -298,7 +295,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "miguel.gallego.CD-StudySessionMVP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -316,7 +313,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "miguel.gallego.CD-StudySessionMVP";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -344,13 +341,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		0C071488245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodeld */ = {
+		0C07149E245F3E86009AD04F /* StudentsModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				0C071489245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodel */,
+				0C07149F245F3E86009AD04F /* StudentsModel.xcdatamodel */,
 			);
-			currentVersion = 0C071489245F3C3A009AD04F /* CD_StudySessionMVP.xcdatamodel */;
-			path = CD_StudySessionMVP.xcdatamodeld;
+			currentVersion = 0C07149F245F3E86009AD04F /* StudentsModel.xcdatamodel */;
+			path = StudentsModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
