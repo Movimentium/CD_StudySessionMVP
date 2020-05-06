@@ -14,10 +14,43 @@
                     <view key="view" contentMode="scaleToFill" id="bL7-Ib-pU5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMsg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QFb-U8-X8P">
+                                <rect key="frame" x="16" y="527" width="288" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="xUm-TQ-exx">
+                                <rect key="frame" x="0.0" y="44" width="320" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="PoJ-C0-L4R" firstAttribute="bottom" secondItem="xUm-TQ-exx" secondAttribute="bottom" constant="56" id="1BX-Zs-NWq"/>
+                            <constraint firstItem="PoJ-C0-L4R" firstAttribute="bottom" secondItem="QFb-U8-X8P" secondAttribute="bottom" constant="20" id="7WN-Ze-wPD"/>
+                            <constraint firstItem="PoJ-C0-L4R" firstAttribute="trailing" secondItem="QFb-U8-X8P" secondAttribute="trailing" constant="16" id="E33-az-uDf"/>
+                            <constraint firstItem="QFb-U8-X8P" firstAttribute="leading" secondItem="PoJ-C0-L4R" secondAttribute="leading" constant="16" id="YaM-SG-FLu"/>
+                            <constraint firstItem="xUm-TQ-exx" firstAttribute="top" secondItem="PoJ-C0-L4R" secondAttribute="top" id="aZf-Zw-i4T"/>
+                            <constraint firstItem="PoJ-C0-L4R" firstAttribute="trailing" secondItem="xUm-TQ-exx" secondAttribute="trailing" id="dtd-vf-kOP"/>
+                            <constraint firstItem="xUm-TQ-exx" firstAttribute="leading" secondItem="PoJ-C0-L4R" secondAttribute="leading" id="o1a-ND-tXE"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="PoJ-C0-L4R"/>
                     </view>
-                    <navigationItem key="navigationItem" id="17U-L5-uZ8"/>
+                    <navigationItem key="navigationItem" id="17U-L5-uZ8">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cr1-Wu-vNd">
+                            <connections>
+                                <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="constrTableB" destination="1BX-Zs-NWq" id="2vb-k1-M34"/>
+                        <outlet property="lblMsg" destination="QFb-U8-X8P" id="nK4-S9-8HJ"/>
+                        <outlet property="table" destination="xUm-TQ-exx" id="p85-aL-THd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8Z-gA-6Ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
