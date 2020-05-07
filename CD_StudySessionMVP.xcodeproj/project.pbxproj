@@ -16,6 +16,9 @@
 		0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0C07149E245F3E86009AD04F /* StudentsModel.xcdatamodeld */; };
 		0C0714A2245F43BB009AD04F /* DataBase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C0714A1245F43BB009AD04F /* DataBase.swift */; };
 		0C7ABA98246096F7002084E5 /* StudentsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7ABA97246096F7002084E5 /* StudentsListPresenter.swift */; };
+		0C7CEB502464745400287DC9 /* SessionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB4F2464745400287DC9 /* SessionsVC.swift */; };
+		0C7CEB522464748600287DC9 /* SessionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB512464748600287DC9 /* SessionsPresenter.swift */; };
+		0C7CEB542464775400287DC9 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB532464775400287DC9 /* K.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +33,9 @@
 		0C07149F245F3E86009AD04F /* StudentsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StudentsModel.xcdatamodel; sourceTree = "<group>"; };
 		0C0714A1245F43BB009AD04F /* DataBase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataBase.swift; sourceTree = "<group>"; };
 		0C7ABA97246096F7002084E5 /* StudentsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsListPresenter.swift; sourceTree = "<group>"; };
+		0C7CEB4F2464745400287DC9 /* SessionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsVC.swift; sourceTree = "<group>"; };
+		0C7CEB512464748600287DC9 /* SessionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsPresenter.swift; sourceTree = "<group>"; };
+		0C7CEB532464775400287DC9 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +71,7 @@
 				0C07147F245F3C3A009AD04F /* AppDelegate.swift */,
 				0C071481245F3C3A009AD04F /* SceneDelegate.swift */,
 				0C0714A1245F43BB009AD04F /* DataBase.swift */,
+				0C7CEB532464775400287DC9 /* K.swift */,
 				0C071499245F3CD3009AD04F /* Model */,
 				0C071498245F3CC4009AD04F /* Views */,
 				0C7ABA99246096FD002084E5 /* Presenters */,
@@ -80,6 +87,7 @@
 				0C071496245F3CB3009AD04F /* LaunchScreen.storyboard */,
 				0C07149A245F3D26009AD04F /* StudySession.storyboard */,
 				0C07149C245F3DD1009AD04F /* StudentsListVC.swift */,
+				0C7CEB4F2464745400287DC9 /* SessionsVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -96,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				0C7ABA97246096F7002084E5 /* StudentsListPresenter.swift */,
+				0C7CEB512464748600287DC9 /* SessionsPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -171,7 +180,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0C7CEB542464775400287DC9 /* K.swift in Sources */,
 				0C0714A2245F43BB009AD04F /* DataBase.swift in Sources */,
+				0C7CEB522464748600287DC9 /* SessionsPresenter.swift in Sources */,
+				0C7CEB502464745400287DC9 /* SessionsVC.swift in Sources */,
 				0C071480245F3C3A009AD04F /* AppDelegate.swift in Sources */,
 				0C7ABA98246096F7002084E5 /* StudentsListPresenter.swift in Sources */,
 				0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */,
