@@ -11,6 +11,7 @@ import Foundation
 protocol StudentsListViewInterface: AnyObject {
     func showAddNewStudentForm()
     func showMsg(_ msg:String, isError:Bool)
+    func reloadData()
 }
 
 
@@ -19,11 +20,11 @@ class StudentsListPresenter {
     weak var viewInterface: StudentsListViewInterface?
     
     var numOfRows: Int {
-        return 1
+        return db.numOfStudents
     }
     
     func titleForCell(at i:Int) -> String {
-        return "hlkjl"
+        return db.studentFullName(at: i)
     }
     
     func btnAddStudentPressed() {
@@ -31,7 +32,9 @@ class StudentsListPresenter {
     }
     
     func addNewStudent(name: String, lastName: String) {
-        
+        let response = db.addStudent(name, lastName)
+        viewInterface?.showMsg(response.msg, isError: response.isError)
+        viewInterface?.reloadData()
     }
     
     func errorTypingNewStudent() {

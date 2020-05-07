@@ -11,8 +11,58 @@ import CoreData
 class DataBase {
     
     static let single = DataBase()
-    private init() {}
+    private init() {
+        requestArrStudents()
+    }
     
+    private var arrStudents: [Student] = []
+    
+    var numOfStudents: Int {
+        return arrStudents.count
+    }
+    
+    func studentFullName(at i:Int) -> String {
+        if i < arrStudents.count {
+            let student = arrStudents[i]
+            return "\(student.firstName ?? "") \(student.lastName ?? "") "
+        } else {
+            return ""
+        }
+    }
+    
+    private func requestArrStudents() {
+        arrStudents = []
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "\(Student.self)")
+        arrStudents = try! moctx.fetch(fr) as? [Student] ?? []
+    }
+    
+    func addStudent(_ name:String, _ lastName:String) ->  (msg:String, isError:Bool) {
+        let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "\(Student.self)")
+        fr.resultType = .countResultType
+        fr.predicate = NSPredicate(format: "firstName = %@ AND lastName = %@", name, lastName)
+        do {
+            let num = try moctx.fetch(fr).first as! Int
+            if num == 0 {
+                let studentEnt = NSEntityDescription.entity(forEntityName: "\(Student.self)", in: moctx)!
+                let student = Student(entity: studentEnt, insertInto: moctx)
+                student.firstName = name
+                student.lastName = lastName
+                try moctx.save()
+                requestArrStudents()
+                return ("Estudiante guardado", false)
+            } else {
+                return ("Ya existe el estudiante", true)
+            }
+        } catch {
+            print("\(DataBase.self) \(#function)")
+            print(error.localizedDescription)
+            return ("Error al añadir el estudiante", true)
+        }
+    }
+    
+    
+    
+
     
     
     // MARK: - Core Data Stack

@@ -87,6 +87,10 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
         }, completion: nil)
     }
 
+    func reloadData() {
+        table.reloadData()
+    }
+    
     // MARK: - UITableViewDataSource
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
