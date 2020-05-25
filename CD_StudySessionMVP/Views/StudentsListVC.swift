@@ -10,6 +10,8 @@ import UIKit
 
 class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDataSource, UITableViewDelegate {
 
+    
+
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var constrTableB: NSLayoutConstraint!
     @IBOutlet weak var lblMsg: UILabel!
@@ -17,8 +19,7 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
     private let presenter = StudentsListPresenter()
     private let idCell = "idCell"
     private var offSetTableB: CGFloat = 0
-    private var animTime: TimeInterval = 0.25
-    private var msgTime: TimeInterval = 0.75
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,11 +75,11 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
     func showMsg(_ msg:String, isError:Bool)  {
         lblMsg.text = msg
         lblMsg.textColor = (isError ? .red : .black)
-        UIView.animate(withDuration: animTime) {
+        UIView.animate(withDuration: K.animTime) {
             self.constrTableB.constant = self.offSetTableB
             self.view.layoutIfNeeded()
         }
-        UIView.animate(withDuration: animTime, delay: animTime + msgTime,
+        UIView.animate(withDuration: K.animTime, delay: K.animTime + K.msgTime,
                        options: UIView.AnimationOptions.curveEaseOut,
                        animations:
         {
@@ -89,6 +90,13 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
 
     func reloadData() {
         table.reloadData()
+    }
+    
+    func navigateToSessionList(forStudentIdx i: Int) {
+        let sessionsVC = storyboard?.instantiateViewController(identifier: "\(SessionsVC.self)") as! SessionsVC
+        sessionsVC.presenter = SessionsPresenter(studentIdx: i)
+        sessionsVC.title = presenter.titleForCell(at: i)
+        navigationController?.pushViewController(sessionsVC, animated: true)
     }
     
     // MARK: - UITableViewDataSource
@@ -107,17 +115,7 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         table.deselectRow(at: indexPath, animated: true)
-        
+        presenter.didSelectStudent(at: indexPath.row)
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

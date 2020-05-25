@@ -8,6 +8,8 @@
 
 import CoreData
 
+typealias StudySessionTuple = (strBeginDate:String, mins:Int16, subject:String)
+
 class DataBase {
     
     static let single = DataBase()
@@ -28,6 +30,23 @@ class DataBase {
         } else {
             return ""
         }
+    }
+    
+    func numOfSessions(forStudentAt i:Int) -> Int {
+        return arrStudents[i].session?.count ?? 0
+    }
+    
+    func studySession(at j:Int, fotStudentAt i:Int) -> SessionTuple {
+        let session = arrStudents[i].session?.object(at: j) as! StudySession
+        var sTuple: SessionTuple
+        var strDate = "Error"
+        if let date = session.beginDate {
+            strDate = DateUtils().dateFormOut.string(from: date)
+        }
+        sTuple.strBeginDate = strDate
+        sTuple.subject = session.subject ?? "Error"
+        sTuple.minutes = session.minutes
+        return sTuple
     }
     
     private func requestArrStudents() {

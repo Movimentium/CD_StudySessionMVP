@@ -16,13 +16,25 @@ class SessionsPresenter {
     private let db = DataBase.single
     weak var viewInterface: SessionsViewInterface?
     
-    var numOfRows:Int {
-        return 1
+    let studentIdx: Int
+    
+    init(studentIdx:Int) {
+        self.studentIdx = studentIdx
     }
     
-    func infoForCell(at i:Int) -> (strBeginDate:String, ) {
-        <#function body#>
+    var numOfRows:Int {
+        return db.numOfSessions(forStudentAt: studentIdx)
     }
+    
+    func session(at i:Int) -> SessionTuple {
+        db.studySession(at: i, fotStudentAt: studentIdx)
+    }
+    
+    
+    
+//    func infoForCell(at i:Int) -> (strBeginDate:String, ) {
+//        <#function body#>
+//    }
     
 
 }

@@ -12,19 +12,24 @@ protocol StudentsListViewInterface: AnyObject {
     func showAddNewStudentForm()
     func showMsg(_ msg:String, isError:Bool)
     func reloadData()
+    func navigateToSessionList(forStudentIdx i:Int)
 }
 
 
 class StudentsListPresenter {
     private let db = DataBase.single
     weak var viewInterface: StudentsListViewInterface?
-    
+        
     var numOfRows: Int {
         return db.numOfStudents
     }
     
     func titleForCell(at i:Int) -> String {
         return db.studentFullName(at: i)
+    }
+    
+    func didSelectStudent(at i:Int) {
+        viewInterface?.navigateToSessionList(forStudentIdx: i)
     }
     
     func btnAddStudentPressed() {

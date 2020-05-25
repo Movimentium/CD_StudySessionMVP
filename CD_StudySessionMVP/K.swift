@@ -17,4 +17,10 @@ struct K {
         case physics
     }
     
+    struct VCId {
+        static let sessionsVC = "SessionsVC"
+    }
+    
+    static let animTime: TimeInterval = 0.25
+    static let msgTime: TimeInterval = 0.75
 }

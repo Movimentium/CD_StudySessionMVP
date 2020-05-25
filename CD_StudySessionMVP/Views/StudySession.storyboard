@@ -51,17 +51,17 @@
                         <outlet property="constrTableB" destination="1BX-Zs-NWq" id="2vb-k1-M34"/>
                         <outlet property="lblMsg" destination="QFb-U8-X8P" id="nK4-S9-8HJ"/>
                         <outlet property="table" destination="xUm-TQ-exx" id="p85-aL-THd"/>
-                        <segue destination="vBd-Lc-aaQ" kind="show" identifier="toSessionsVC" id="Ket-gu-APa"/>
+                        <segue destination="vBd-Lc-aaQ" kind="show" id="IQS-JU-fg9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U8Z-gA-6Ee" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="856.875" y="130.98591549295776"/>
         </scene>
-        <!--View Controller-->
+        <!--SessionsVC-->
         <scene sceneID="HPN-rU-BzO">
             <objects>
-                <viewController id="vBd-Lc-aaQ" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SessionsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vBd-Lc-aaQ" customClass="SessionsVC" customModule="CD_StudySessionMVP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ikd-eq-Vr5">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -90,7 +90,18 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="1f9-EX-tiJ"/>
                     </view>
-                    <navigationItem key="navigationItem" id="a2e-WK-geo"/>
+                    <navigationItem key="navigationItem" id="a2e-WK-geo">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyo-tv-YBe">
+                            <connections>
+                                <action selector="onBtnAdd:" destination="vBd-Lc-aaQ" id="Gse-Qh-R7V"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="constrTableB" destination="dWv-O9-xZY" id="xRV-VL-Oy3"/>
+                        <outlet property="lblMsg" destination="3e2-ex-8tB" id="Hp1-AM-O6u"/>
+                        <outlet property="table" destination="x7U-m3-HlP" id="teN-um-UGj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AE8-sx-Gbi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,7 +161,7 @@
                                 </constraints>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-f6-p5m">
-                                <rect key="frame" x="0.0" y="66" width="320" height="140"/>
+                                <rect key="frame" x="0.0" y="65.5" width="320" height="140"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="PHd-c6-7Oo"/>
                                 </constraints>

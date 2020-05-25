@@ -19,6 +19,7 @@
 		0C7CEB502464745400287DC9 /* SessionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB4F2464745400287DC9 /* SessionsVC.swift */; };
 		0C7CEB522464748600287DC9 /* SessionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB512464748600287DC9 /* SessionsPresenter.swift */; };
 		0C7CEB542464775400287DC9 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB532464775400287DC9 /* K.swift */; };
+		0CF7D3F7247C6F3B00A29BDE /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7D3F6247C6F3B00A29BDE /* DateUtils.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		0C7CEB4F2464745400287DC9 /* SessionsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsVC.swift; sourceTree = "<group>"; };
 		0C7CEB512464748600287DC9 /* SessionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsPresenter.swift; sourceTree = "<group>"; };
 		0C7CEB532464775400287DC9 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
+		0CF7D3F6247C6F3B00A29BDE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				0C071481245F3C3A009AD04F /* SceneDelegate.swift */,
 				0C0714A1245F43BB009AD04F /* DataBase.swift */,
 				0C7CEB532464775400287DC9 /* K.swift */,
+				0CF7D3F6247C6F3B00A29BDE /* DateUtils.swift */,
 				0C071499245F3CD3009AD04F /* Model */,
 				0C071498245F3CC4009AD04F /* Views */,
 				0C7ABA99246096FD002084E5 /* Presenters */,
@@ -187,6 +190,7 @@
 				0C071480245F3C3A009AD04F /* AppDelegate.swift in Sources */,
 				0C7ABA98246096F7002084E5 /* StudentsListPresenter.swift in Sources */,
 				0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */,
+				0CF7D3F7247C6F3B00A29BDE /* DateUtils.swift in Sources */,
 				0C07149D245F3DD1009AD04F /* StudentsListVC.swift in Sources */,
 				0C071482245F3C3A009AD04F /* SceneDelegate.swift in Sources */,
 			);
