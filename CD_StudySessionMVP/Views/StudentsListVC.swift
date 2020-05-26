@@ -41,6 +41,11 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
         presenter.btnAddStudentPressed()
     }
     
+    @IBAction func onBtnEdit(_ sender: UIBarButtonItem) {
+        presenter.btnBtnEditPressed()
+        table.setEditing(presenter.isEditMode, animated: true)
+    }
+    
     // MARK: - StudentsListViewInterface
     
     func showAddNewStudentForm() {
@@ -118,4 +123,15 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
         presenter.didSelectStudent(at: indexPath.row)
     }
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return presenter.isEditMode
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        presenter.deleteStudent(at: indexPath.row)
+        
+        
+        
+    }
+    
 }

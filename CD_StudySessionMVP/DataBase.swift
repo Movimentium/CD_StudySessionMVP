@@ -79,6 +79,10 @@ class DataBase {
         }
     }
     
+    func deleteStudent(at i:Int) {
+        
+    }
+    
     
     // MARK: - PRUEBAS
     

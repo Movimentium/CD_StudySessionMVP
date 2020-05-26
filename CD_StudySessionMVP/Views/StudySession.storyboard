@@ -41,11 +41,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="17U-L5-uZ8">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ji-PR-ZS7"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cr1-Wu-vNd">
-                            <connections>
-                                <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="cr1-Wu-vNd">
+                                <connections>
+                                    <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="TfW-0b-xDA">
+                                <connections>
+                                    <action selector="onBtnEdit:" destination="L6G-1x-MJa" id="lSm-iq-Ibs"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="constrTableB" destination="1BX-Zs-NWq" id="2vb-k1-M34"/>
