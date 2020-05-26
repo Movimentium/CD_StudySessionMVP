@@ -41,11 +41,18 @@
                     </view>
                     <navigationItem key="navigationItem" id="17U-L5-uZ8">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ji-PR-ZS7"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cr1-Wu-vNd">
-                            <connections>
-                                <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="cr1-Wu-vNd">
+                                <connections>
+                                    <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="TfW-0b-xDA">
+                                <connections>
+                                    <action selector="onBtnEdit:" destination="L6G-1x-MJa" id="WeH-8V-Ces"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="constrTableB" destination="1BX-Zs-NWq" id="2vb-k1-M34"/>
@@ -97,9 +104,9 @@
                                     <action selector="onBtnAdd:" destination="vBd-Lc-aaQ" id="Gse-Qh-R7V"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem systemItem="edit" id="TfW-0b-xDA">
+                            <barButtonItem systemItem="edit" id="ElD-O8-UWp">
                                 <connections>
-                                    <action selector="onBtnEdit:" destination="vBd-Lc-aaQ" id="rc7-fn-4fd"/>
+                                    <action selector="onBtnEdit:" destination="vBd-Lc-aaQ" id="8Y6-4q-Szk"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>

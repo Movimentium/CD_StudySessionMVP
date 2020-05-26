@@ -17,6 +17,8 @@ class DataBase {
         requestArrStudents()
     }
     
+    // MARK: - Students vars & methods
+    
     private var arrStudents: [Student] = []
     
     var numOfStudents: Int {
@@ -65,6 +67,8 @@ class DataBase {
     func deleteStudent(at i:Int) {
         
     }
+    
+    // MARK: - Sessions methods
     
     func numOfSessions(forStudentAt i:Int) -> Int {
         return arrStudents[i].session?.count ?? 0
