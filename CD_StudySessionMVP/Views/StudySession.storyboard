@@ -41,18 +41,11 @@
                     </view>
                     <navigationItem key="navigationItem" id="17U-L5-uZ8">
                         <barButtonItem key="backBarButtonItem" title=" " id="0Ji-PR-ZS7"/>
-                        <rightBarButtonItems>
-                            <barButtonItem systemItem="add" id="cr1-Wu-vNd">
-                                <connections>
-                                    <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
-                                </connections>
-                            </barButtonItem>
-                            <barButtonItem systemItem="edit" id="TfW-0b-xDA">
-                                <connections>
-                                    <action selector="onBtnEdit:" destination="L6G-1x-MJa" id="lSm-iq-Ibs"/>
-                                </connections>
-                            </barButtonItem>
-                        </rightBarButtonItems>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="cr1-Wu-vNd">
+                            <connections>
+                                <action selector="onBtnAdd:" destination="L6G-1x-MJa" id="gqD-4e-mQm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="constrTableB" destination="1BX-Zs-NWq" id="2vb-k1-M34"/>
@@ -73,17 +66,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7U-m3-HlP">
-                                <rect key="frame" x="0.0" y="44" width="320" height="468"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="lblMsg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3e2-ex-8tB">
                                 <rect key="frame" x="16" y="527" width="288" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x7U-m3-HlP">
+                                <rect key="frame" x="0.0" y="44" width="320" height="468"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGray4Color" red="0.81960784310000001" green="0.81960784310000001" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -98,11 +91,18 @@
                         <viewLayoutGuide key="safeArea" id="1f9-EX-tiJ"/>
                     </view>
                     <navigationItem key="navigationItem" id="a2e-WK-geo">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="yyo-tv-YBe">
-                            <connections>
-                                <action selector="onBtnAdd:" destination="vBd-Lc-aaQ" id="Gse-Qh-R7V"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="yyo-tv-YBe">
+                                <connections>
+                                    <action selector="onBtnAdd:" destination="vBd-Lc-aaQ" id="Gse-Qh-R7V"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="edit" id="TfW-0b-xDA">
+                                <connections>
+                                    <action selector="onBtnEdit:" destination="vBd-Lc-aaQ" id="rc7-fn-4fd"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="constrTableB" destination="dWv-O9-xZY" id="xRV-VL-Oy3"/>

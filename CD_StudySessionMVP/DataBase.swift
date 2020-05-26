@@ -32,23 +32,6 @@ class DataBase {
         }
     }
     
-    func numOfSessions(forStudentAt i:Int) -> Int {
-        return arrStudents[i].session?.count ?? 0
-    }
-    
-    func studySession(at j:Int, fotStudentAt i:Int) -> SessionTuple {
-        let session = arrStudents[i].session?.object(at: j) as! StudySession
-        var sTuple: SessionTuple
-        var strDate = "Error"
-        if let date = session.beginDate {
-            strDate = DateUtils().dateFormOut.string(from: date)
-        }
-        sTuple.strBeginDate = strDate
-        sTuple.subject = session.subject ?? "Error"
-        sTuple.minutes = session.minutes
-        return sTuple
-    }
-    
     private func requestArrStudents() {
         arrStudents = []
         let fr = NSFetchRequest<NSFetchRequestResult>(entityName: "\(Student.self)")
@@ -81,6 +64,39 @@ class DataBase {
     
     func deleteStudent(at i:Int) {
         
+    }
+    
+    func numOfSessions(forStudentAt i:Int) -> Int {
+        return arrStudents[i].session?.count ?? 0
+    }
+    
+    func studySession(at j:Int, fotStudentAt i:Int) -> SessionTuple {
+        let session = arrStudents[i].session?.object(at: j) as! StudySession
+        var sTuple: SessionTuple
+        var strDate = "Error"
+        if let date = session.beginDate {
+            strDate = DateUtils().dateFormOut.string(from: date)
+        }
+        sTuple.strBeginDate = strDate
+        sTuple.subject = session.subject ?? "Error"
+        sTuple.minutes = session.minutes
+        return sTuple
+    }
+    
+    func deleteStudySession(at i:Int, fotStudentAt studentIdx:Int) -> (msg:String, isError:Bool) {
+        guard let obj = arrStudents[studentIdx].session?.object(at: i),
+            let session = obj as? StudySession else {
+            return ("Error al borrar la sesión",true)
+        }
+        moctx.delete(session)
+        do {
+            try moctx.save()
+            return ("Sesión borrada",false)
+        } catch {
+            print("\(DataBase.self) \(#function)")
+            print(error.localizedDescription)
+            return ("Error al borrar la sesión", true)
+        }
     }
     
     

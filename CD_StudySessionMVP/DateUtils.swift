@@ -15,7 +15,7 @@ class DateUtils {
 
     init() {
         dateFormIn.dateFormat = "YYYY-MM-dd'T'HH:mm:ss.000Z"
-        dateFormOut.dateFormat = "dd/MM/YYYY HH:mm:ss"
+        dateFormOut.dateFormat = "dd/MM/YYYY HH:mm"
     }
     
 }

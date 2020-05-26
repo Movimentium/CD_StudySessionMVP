@@ -43,6 +43,10 @@ class SessionsVC: UIViewController, SessionsViewInterface, UITableViewDataSource
         }
     }
 
+    @IBAction func onBtnEdit(_ sender: UIBarButtonItem) {
+        presenter.btnBtnEditPressed()
+        table.setEditing(presenter.isEditMode, animated: true)
+    }
     
     // MARK: - SessionsViewInterface
     
@@ -69,6 +73,14 @@ class SessionsVC: UIViewController, SessionsViewInterface, UITableViewDataSource
     
     // MARK: - UITableViewDelegate
 
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return presenter.isEditMode
+    }
     
-
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let response = presenter.deleteSession(at: indexPath.row)
+        if response.isError == false {
+            table.deleteRows(at: [indexPath], with: .top)
+        }
+    }
 }

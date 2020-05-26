@@ -18,7 +18,7 @@ class SessionsPresenter: AddSessionPresenterDelegate {
     private let db = DataBase.single
     weak var viewInterface: SessionsViewInterface?
     
-    
+    private(set) var isEditMode: Bool = false
     let studentIdx: Int
     
     init(studentIdx:Int) {
@@ -31,6 +31,16 @@ class SessionsPresenter: AddSessionPresenterDelegate {
     
     func session(at i:Int) -> SessionTuple {
         return db.studySession(at: i, fotStudentAt: studentIdx)
+    }
+    
+    func deleteSession(at i:Int) -> (msg:String, isError: Bool) {
+        let response = db.deleteStudySession(at: i, fotStudentAt: studentIdx)
+        // TODO: Gestionar errores
+        return response
+    }
+    
+    func btnBtnEditPressed() {
+        isEditMode = !isEditMode
     }
     
     // MARK: - AddSessionPresenterDelegate
