@@ -80,7 +80,22 @@ class DataBase {
     }
     
     
+    // MARK: - PRUEBAS
     
+    func add(at i:Int, beginDate:Date, mins:Int16, subject:String) {
+        let studySessionEnt = NSEntityDescription.entity(forEntityName: "\(StudySession.self)", in: moctx)!
+        let studySession = StudySession(entity: studySessionEnt, insertInto: moctx)
+        
+        studySession.beginDate = beginDate
+        studySession.minutes = mins
+        studySession.subject = subject
+        
+        let sessions = arrStudents[i].session!.mutableCopy() as! NSMutableOrderedSet
+        sessions.add(studySession)
+        arrStudents[i].session = sessions
+        
+        saveContext()
+    }
 
     
     

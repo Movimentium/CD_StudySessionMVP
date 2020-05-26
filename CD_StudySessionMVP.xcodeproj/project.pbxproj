@@ -20,6 +20,8 @@
 		0C7CEB522464748600287DC9 /* SessionsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB512464748600287DC9 /* SessionsPresenter.swift */; };
 		0C7CEB542464775400287DC9 /* K.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C7CEB532464775400287DC9 /* K.swift */; };
 		0CF7D3F7247C6F3B00A29BDE /* DateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7D3F6247C6F3B00A29BDE /* DateUtils.swift */; };
+		0CF7D3FD247C80FA00A29BDE /* AddSessionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7D3FC247C80FA00A29BDE /* AddSessionVC.swift */; };
+		0CF7D3FF247C892B00A29BDE /* AddSessionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0CF7D3FE247C892B00A29BDE /* AddSessionPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,8 @@
 		0C7CEB512464748600287DC9 /* SessionsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionsPresenter.swift; sourceTree = "<group>"; };
 		0C7CEB532464775400287DC9 /* K.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = K.swift; sourceTree = "<group>"; };
 		0CF7D3F6247C6F3B00A29BDE /* DateUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateUtils.swift; sourceTree = "<group>"; };
+		0CF7D3FC247C80FA00A29BDE /* AddSessionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSessionVC.swift; sourceTree = "<group>"; };
+		0CF7D3FE247C892B00A29BDE /* AddSessionPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddSessionPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 				0C07149A245F3D26009AD04F /* StudySession.storyboard */,
 				0C07149C245F3DD1009AD04F /* StudentsListVC.swift */,
 				0C7CEB4F2464745400287DC9 /* SessionsVC.swift */,
+				0CF7D3FC247C80FA00A29BDE /* AddSessionVC.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -108,6 +113,7 @@
 			children = (
 				0C7ABA97246096F7002084E5 /* StudentsListPresenter.swift */,
 				0C7CEB512464748600287DC9 /* SessionsPresenter.swift */,
+				0CF7D3FE247C892B00A29BDE /* AddSessionPresenter.swift */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -186,7 +192,9 @@
 				0C7CEB542464775400287DC9 /* K.swift in Sources */,
 				0C0714A2245F43BB009AD04F /* DataBase.swift in Sources */,
 				0C7CEB522464748600287DC9 /* SessionsPresenter.swift in Sources */,
+				0CF7D3FD247C80FA00A29BDE /* AddSessionVC.swift in Sources */,
 				0C7CEB502464745400287DC9 /* SessionsVC.swift in Sources */,
+				0CF7D3FF247C892B00A29BDE /* AddSessionPresenter.swift in Sources */,
 				0C071480245F3C3A009AD04F /* AppDelegate.swift in Sources */,
 				0C7ABA98246096F7002084E5 /* StudentsListPresenter.swift in Sources */,
 				0C0714A0245F3E86009AD04F /* StudentsModel.xcdatamodeld in Sources */,

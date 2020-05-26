@@ -12,10 +12,23 @@ typealias SessionTuple = (subject:String, strBeginDate:String, minutes:Int16)
 
 struct K {
     
-    enum Subject {
-        case maths
-        case physics
+    enum Subject: String, CaseIterable {
+        case maths = "Matemáticas"
+        case physics = "Física"
+        case technicalDrawing = "Dibujo técnico"
+        case technology = "Tecnología"
+        case english = "Inglés"
     }
+    
+    static let arrMinutes: [Int16] = {
+        var arr:[Int16] = []
+        var min:Int16 = 15
+        for i in 1...7 {
+            min += 15
+            arr.append(min)
+        }
+        return arr
+    }()
     
     struct VCId {
         static let sessionsVC = "SessionsVC"

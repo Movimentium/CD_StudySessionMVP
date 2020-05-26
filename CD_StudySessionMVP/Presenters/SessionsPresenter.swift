@@ -9,12 +9,15 @@
 import Foundation
 
 protocol SessionsViewInterface: AnyObject {
-    func nada()
+    func reloadData()
 }
 
-class SessionsPresenter {
+ 
+class SessionsPresenter: AddSessionPresenterDelegate {
+  
     private let db = DataBase.single
     weak var viewInterface: SessionsViewInterface?
+    
     
     let studentIdx: Int
     
@@ -27,14 +30,15 @@ class SessionsPresenter {
     }
     
     func session(at i:Int) -> SessionTuple {
-        db.studySession(at: i, fotStudentAt: studentIdx)
+        return db.studySession(at: i, fotStudentAt: studentIdx)
     }
     
+    // MARK: - AddSessionPresenterDelegate
     
-    
-//    func infoForCell(at i:Int) -> (strBeginDate:String, ) {
-//        <#function body#>
-//    }
-    
+    func didAddSession(withError errorMsg: String?) {
+        viewInterface?.reloadData()
+    }
+      
+
 
 }

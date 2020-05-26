@@ -24,8 +24,9 @@ class SessionsVC: UIViewController, SessionsViewInterface, UITableViewDataSource
         super.viewDidLoad()
         presenter.viewInterface = self
         offSetTableB = constrTableB.constant
-        table.register(UITableViewCell.self, forCellReuseIdentifier: idCell)
-        table.rowHeight = 44
+        constrTableB.constant = 0
+        table.rowHeight = 60
+        table.allowsSelection = false
         table.dataSource = self
         table.delegate = self
     }
@@ -33,14 +34,20 @@ class SessionsVC: UIViewController, SessionsViewInterface, UITableViewDataSource
     // MARK: - IBActions
 
     @IBAction func onBtnAdd(_ sender: UIBarButtonItem) {
-        //presenter.btnAddStudySessionPressed()
+        let addSessionVC = storyboard?.instantiateViewController(identifier: "\(AddSessionVC.self)") as! AddSessionVC
+        addSessionVC.presenter = AddSessionPresenter(studentIdx: presenter.studentIdx)
+        addSessionVC.presenter.delegate = presenter
+        addSessionVC.modalPresentationStyle = .popover
+        present(addSessionVC, animated: true) {
+            print("\(self.classForCoder)) \(#function)")
+        }
     }
 
     
     // MARK: - SessionsViewInterface
     
-    func nada() {
-         
+    func reloadData() {
+        table.reloadData()
     }
     
     // MARK: - UITableViewDataSource
@@ -50,10 +57,13 @@ class SessionsVC: UIViewController, SessionsViewInterface, UITableViewDataSource
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = table.dequeueReusableCell(withIdentifier: idCell)!
+        var cell:UITableViewCell! = table.dequeueReusableCell(withIdentifier: idCell)
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: idCell)
+        }
         let sTuple = presenter.session(at: indexPath.row)
-        cell.textLabel?.text = "\(sTuple.strBeginDate), \(sTuple.minutes) mins"
-        cell.detailTextLabel?.text = sTuple.subject
+        cell.textLabel?.text = sTuple.subject
+        cell.detailTextLabel?.text = "\(sTuple.strBeginDate), \(sTuple.minutes) mins"
         return cell
     }
     

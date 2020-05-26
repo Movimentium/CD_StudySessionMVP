@@ -107,10 +107,10 @@
             </objects>
             <point key="canvasLocation" x="1652" y="131"/>
         </scene>
-        <!--View Controller-->
+        <!--Add SessionVC-->
         <scene sceneID="goQ-Y0-yR6">
             <objects>
-                <viewController id="bZG-6E-goX" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddSessionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bZG-6E-goX" customClass="AddSessionVC" customModule="CD_StudySessionMVP" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fIu-VT-svq">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -120,12 +120,10 @@
                                 <segments>
                                     <segment title="30"/>
                                     <segment title="45"/>
-                                    <segment title="60"/>
-                                    <segment title="75"/>
-                                    <segment title="90"/>
-                                    <segment title="105"/>
-                                    <segment title="120"/>
                                 </segments>
+                                <connections>
+                                    <action selector="onSegMinsValueChanged:" destination="bZG-6E-goX" eventType="valueChanged" id="Sv5-dF-WUt"/>
+                                </connections>
                             </segmentedControl>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="pig-RS-j0c">
                                 <rect key="frame" x="14" y="518" width="292" height="40"/>
@@ -138,6 +136,9 @@
                                         </constraints>
                                         <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="onBtnCancel" destination="bZG-6E-goX" eventType="touchUpInside" id="4Xe-D5-Ukd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2aU-BT-Vb8">
                                         <rect key="frame" x="156" y="0.0" width="136" height="40"/>
@@ -147,6 +148,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Add"/>
+                                        <connections>
+                                            <action selector="onBtnAdd" destination="bZG-6E-goX" eventType="touchUpInside" id="4hV-3k-6ij"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -156,12 +160,17 @@
                             </stackView>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="Bpu-Hg-yY8">
                                 <rect key="frame" x="0.0" y="242" width="320" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="46f-wC-Na4"/>
                                 </constraints>
+                                <connections>
+                                    <action selector="onDatePickerValueChanged:" destination="bZG-6E-goX" eventType="valueChanged" id="Zdg-nl-LU1"/>
+                                </connections>
                             </datePicker>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5sD-f6-p5m">
                                 <rect key="frame" x="0.0" y="65.5" width="320" height="140"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="140" id="PHd-c6-7Oo"/>
                                 </constraints>
@@ -211,6 +220,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="NBv-ga-ciw"/>
                     </view>
+                    <connections>
+                        <outlet property="datePicker" destination="Bpu-Hg-yY8" id="k6Q-hb-Umd"/>
+                        <outlet property="lblDate" destination="DvO-hX-PhO" id="pin-h5-QqQ"/>
+                        <outlet property="lblMins" destination="Sx3-EK-Ecr" id="QXb-Bi-w6U"/>
+                        <outlet property="lblSubject" destination="Qc7-A6-x4C" id="B6t-NR-ARm"/>
+                        <outlet property="pickerSubject" destination="5sD-f6-p5m" id="GiB-Db-68S"/>
+                        <outlet property="segMins" destination="UuL-st-3Dq" id="tOK-uh-INL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAl-4N-iOl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
