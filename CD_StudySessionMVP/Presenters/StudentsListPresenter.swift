@@ -49,9 +49,10 @@ class StudentsListPresenter {
         viewInterface?.reloadData()
     }
     
-    func deleteStudent(at i:Int) {
-        db.deleteStudent(at: i)
-        //viewInterface?.reloadData()
+    func deleteStudent(at i:Int) -> (msg:String, isError: Bool) {
+        let response = db.deleteStudent(at: i)
+        viewInterface?.showMsg(response.msg, isError: response.isError)
+        return response
     }
     
     

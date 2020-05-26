@@ -128,8 +128,10 @@ class StudentsListVC: UIViewController, StudentsListViewInterface, UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        presenter.deleteStudent(at: indexPath.row)
-        
+        let response = presenter.deleteStudent(at: indexPath.row)
+        if response.isError == false {
+            table.deleteRows(at: [indexPath], with: .right)
+        }
         
         
     }

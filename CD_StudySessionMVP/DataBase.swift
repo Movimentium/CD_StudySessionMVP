@@ -64,8 +64,18 @@ class DataBase {
         }
     }
     
-    func deleteStudent(at i:Int) {
-        
+    func deleteStudent(at i:Int) -> (msg:String, isError:Bool) {
+        let student = arrStudents[i]
+        moctx.delete(student)
+        do {
+            try moctx.save()
+            arrStudents.remove(at: i)
+            return ("Estudiante borrado",false)
+        } catch  {
+            print("\(DataBase.self) \(#function)")
+            print(error.localizedDescription)
+            return ("Error al borrar el estudiante", true)
+        }
     }
     
     // MARK: - Sessions methods
@@ -103,9 +113,7 @@ class DataBase {
         }
     }
     
-    
-    // MARK: - PRUEBAS
-    
+        
     func add(at i:Int, beginDate:Date, mins:Int16, subject:String) {
         let studySessionEnt = NSEntityDescription.entity(forEntityName: "\(StudySession.self)", in: moctx)!
         let studySession = StudySession(entity: studySessionEnt, insertInto: moctx)
